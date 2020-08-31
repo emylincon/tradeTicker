@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+
+<div id="main">
+    <div id="welcome">Welcome to Trade Ticker API</div>
+</div>
+
+<script>
+    var fit  = document.querySelector('#main');
+    fit.style.height = `${window.innerHeight-15}px`;
+</script>
+</body>
+</html>
