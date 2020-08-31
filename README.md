@@ -1,6 +1,8 @@
 # TRADE TICKER API
 * get ticker symbol from company name, currency etc and vice versa
 
+[Application link](https://trade-ticker.herokuapp.com/)
+
 ## How to Use
 * To get ticker from name
 ```python
