@@ -11,15 +11,15 @@ class Data:
 
     def ticker_match(self, ticker, kind='match'):    # kind = match or contains
         if kind == 'match':
-            return self.df[self.df['Ticker'].str.match(ticker)].to_dict('records')
+            return self.df[self.df['Ticker'].str.match(ticker, case=False)].to_dict('records')
         else:
-            return self.df[self.df['Ticker'].str.contains(ticker)].to_dict('records')
+            return self.df[self.df['Ticker'].str.contains(ticker, case=False)].to_dict('records')
     
     def name_match(self, name, kind='match'):
         if kind == 'match':
-            return self.df[self.df['Name'].str.match(name)].to_dict('records')
+            return self.df[self.df['Name'].str.match(name, case=False)].to_dict('records')
         else:
-            return self.df[self.df['Name'].str.contains(name)].to_dict('records')
+            return self.df[self.df['Name'].str.contains(name, case=False)].to_dict('records')
 
 
 Record = Data()
