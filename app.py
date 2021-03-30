@@ -9,17 +9,17 @@ class Data:
         self.df = pd.read_csv('data/data.csv')
         self.df = self.df.fillna('missing')
 
-    def ticker_match(self, ticker, kind='match'):    # kind = match or contains
+    def ticker_match(self, ticker, kind='match', length=150):    # kind = match or contains
         if kind == 'match':
-            return self.df[self.df['Ticker'].str.match(ticker, case=False)].to_dict('records')
+            return self.df[self.df['Ticker'].str.match(ticker, case=False)].to_dict('records')[:length]
         else:
-            return self.df[self.df['Ticker'].str.contains(ticker, case=False)].to_dict('records')
+            return self.df[self.df['Ticker'].str.contains(ticker, case=False)].to_dict('records')[:length]
     
-    def name_match(self, name, kind='match'):
+    def name_match(self, name, kind='match', length=150):
         if kind == 'match':
-            return self.df[self.df['Name'].str.match(name, case=False)].to_dict('records')
+            return self.df[self.df['Name'].str.match(name, case=False)].to_dict('records')[:length]
         else:
-            return self.df[self.df['Name'].str.contains(name, case=False)].to_dict('records')
+            return self.df[self.df['Name'].str.contains(name, case=False)].to_dict('records')[:length]
 
 
 Record = Data()
